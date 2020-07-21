@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: sample-kibana
+  namespace: elk
+  labels:
+    component: sample-kibana
+spec:
+  type: LoadBalancer
+  selector:
+    component: sample-kibana
+  ports:
+  - name: http
+    port: 80
+    targetPort: http
