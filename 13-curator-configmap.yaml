@@ -19,7 +19,7 @@ data:
           direction: older
           timestring: '%Y.%m.%d'
           unit: days
-          unit_count: 5
+          unit_count: 4
           field:
           stats_result:
           epoch:
@@ -37,7 +37,7 @@ data:
       client_cert:
       client_key: 
       ssl_no_validate: False
-      http_auth: "elastic:changeme"
+      http_auth: "elastic:Telefonica.elk.2020+"
       timeout: 30
       master_only: False
 
@@ -45,12 +45,12 @@ data:
       loglevel: INFO
       logfile:
       logformat: default
-      blacklist: ['elasticsearch', 'urllib3']
+      blacklist: []
 
 metadata:
   annotations:
     kubectl.kubernetes.io/last-applied-configuration: |
-      {"apiVersion":"v1","data":{"action_file.yml":"---\n# Remember, leave a key empty if there is no value.  None will be a string, not a Python \"NoneType\"\nactions:\n  1:\n    action: delete_indices\n    description: \"Clean up ES by deleting old indices\"\n    options:\n      timeout_override:\n      continue_if_exception: False\n      disable_action: False\n      ignore_empty_list: True\n    filters:\n    - filtertype: age\n      source: name\n      direction: older\n      timestring: '%Y.%m.%d'\n      unit: days\n      unit_count: 10\n      field:\n      stats_result:\n      epoch:\n      exclude: False","config.yml":"---\n# Remember, leave a key empty if there is no value.  None will be a string, not a Python \"NoneType\"\nclient:\n  hosts:\n    - elasticsearch\n  port: 9200\n  url_prefix:\n  use_ssl: False\n  certificate:\n  client_cert:\n  client_key:\n  ssl_no_validate: False\n  http_auth:\n  timeout: 30\n  master_only: False\n\nlogging:\n  loglevel: INFO\n  logfile:\n  logformat: default\n  blacklist: ['elasticsearch', 'urllib3']"},"kind":"ConfigMap","metadata":{"annotations":{},"labels":{"app":"elasticsearch","stack":"management"},"name":"elasticsearch-curator","namespace":"elk"}}
+      {"apiVersion":"v1","data":{"action_file.yml":"---\n# Remember, leave a key empty if there is no value.  None will be a string, not a Python \"NoneType\"\nactions:\n  1:\n    action: delete_indices\n    description: \"Clean up ES by deleting old indices\"\n    options:\n      timeout_override:\n      continue_if_exception: False\n      disable_action: False\n      ignore_empty_list: True\n    filters:\n    - filtertype: age\n      source: name\n      direction: older\n      timestring: '%Y.%m.%d'\n      unit: days\n      unit_count: 10\n      field:\n      stats_result:\n      epoch:\n      exclude: False","config.yml":"---\n# Remember, leave a key empty if there is no value.  None will be a string, not a Python \"NoneType\"\nclient:\n  hosts:\n    - elasticsearch\n  port: 9200\n  url_prefix:\n  use_ssl: False\n  certificate:\n  client_cert:\n  client_key:\n  ssl_no_validate: False\n  http_auth:\n  timeout: 30\n  master_only: False\n\nlogging:\n  loglevel: INFO\n  logfile:\n  logformat: default\n  blacklist: []"},"kind":"ConfigMap","metadata":{"annotations":{},"labels":{"app":"elasticsearch","stack":"management"},"name":"elasticsearch-curator","namespace":"elk"}}
   creationTimestamp: "2019-07-31T18:53:14Z"
   labels:
     app: elasticsearch

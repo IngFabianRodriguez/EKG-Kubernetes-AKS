@@ -1,0 +1,45 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: sample-logstash-extractor-configmap
+  namespace: elk
+data:
+  logstash.yml: |
+    xpack.monitoring.elasticsearch.hosts: http://sample-elasticsearch:9200
+    dead_letter_queue.enable: true
+    xpack.monitoring.enabled: true
+    xpack.monitoring.elasticsearch.username: logstash_system 
+    xpack.monitoring.elasticsearch.password: "Telefonica.elk.2020+"
+  pipelines.yml: |
+    - pipeline.id: logstash
+      path.config: "/usr/share/logstash/logstash.cfg"
+  logstash.cfg: |
+    input {
+      elasticsearch {
+        hosts => "http://sample-elasticsearch:9200"
+        user => "elastic"
+        password => "Telefonica.elk.2020+"
+        index => "logstash-log-2020.09.20"
+        query => '
+          {
+            "query": {
+              "match_all": {}
+          }	
+        } '
+      }
+    }
+    
+    filter {
+      json{
+        source => "message"
+        target => "field"
+      }
+    }
+
+    output {
+      csv {
+        fields => ["@timestamp", "message"]
+        path => "/tmp/logstash-log-2020.09.20.csv"
+      }
+    }
+  logstash.conf: |

@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: sample-logstash-extractor
+  namespace: elk
+  labels:
+    component: sample-logstash-extractor
+spec:
+  type: LoadBalancer
+  selector:
+    component: sample-logstash-extractor
+  ports:
+  - name: tcp
+    port: 5000
+    nodePort: 31301
+    targetPort: tcp

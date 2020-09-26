@@ -48,7 +48,9 @@ spec:
           - name: "xpack.security.enabled"
             value: "true"
           - name: "xpack.security.transport.ssl.enabled"
-            value: "true"   
+            value: "true"
+          - name: "xpack.security.authc.api_key.enabled"
+            value: "true"
           - name: "TAKE_FILE_OWNERSHIP"
             value: “1”
           - name: node.name
@@ -80,4 +82,4 @@ spec:
       storageClassName: default
       resources:
         requests:
-          storage: 2Gi
+          storage: 200Gi

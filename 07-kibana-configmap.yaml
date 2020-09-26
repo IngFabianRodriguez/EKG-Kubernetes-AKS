@@ -11,6 +11,6 @@ data:
     elasticsearch.hosts: http://sample-elasticsearch:9200
     xpack.monitoring.ui.container.elasticsearch.enabled: true
     elasticsearch.username: kibana
-    elasticsearch.password: changeme
+    elasticsearch.password: Telefonica.elk.2020+
 
    
