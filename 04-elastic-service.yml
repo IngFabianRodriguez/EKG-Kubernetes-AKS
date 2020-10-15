@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service                
 metadata:                    
   name: sample-elasticsearch
-  namespace: elk        
+  namespace: elk-test        
   labels:                    
     service: sample-elasticsearch
 spec:                        

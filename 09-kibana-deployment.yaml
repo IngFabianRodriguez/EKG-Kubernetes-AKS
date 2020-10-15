@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  namespace: elk
+  namespace: elk-test
   name: sample-kibana
   labels:
     component: sample-kibana
@@ -9,7 +9,7 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-     component: sample-kibana
+      component: sample-kibana
   template:
     metadata:
       labels:

@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: sample-elasticsearch
-  namespace: elk
+  namespace: elk-test
   labels:
     service: sample-elasticsearch
 spec:

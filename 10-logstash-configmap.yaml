@@ -2,25 +2,22 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: sample-logstash-configmap
-  namespace: default
+  namespace: elk-test
 data:
   logstash.yml: |
-    xpack.monitoring.elasticsearch.url: http://sample-elasticsearch:9200
+    xpack.monitoring.elasticsearch.hosts: http://sample-elasticsearch:9200
     dead_letter_queue.enable: true
     xpack.monitoring.enabled: true
     xpack.monitoring.elasticsearch.username: logstash_system 
-    xpack.monitoring.elasticsearch.password: Password1$
+    xpack.monitoring.elasticsearch.password: Telefonica.elk.2020+
   pipelines.yml: |
-    - pipeline.id: azureeventhubs
-      path.config: "/usr/share/logstash/azureeventhubs.cfg"
-  azureeventhubs.cfg: |
+    - pipeline.id: logstash
+      path.config: "/usr/share/logstash/logstash.cfg"
+  logstash.cfg: |
     input {
-      tcp {
-        port => 5000
-      }
       http {
-            port => 31311
-            codec => json
+        port => 31311
+        codec => json
         }
     }
 
@@ -31,12 +28,11 @@ data:
       }
     }
 
-
     output {
       elasticsearch {
-        hosts => "elasticsearch:9200"
+        hosts => "http://sample-elasticsearch:9200"
         user => "elastic"
-        password => "changeme"
+        password => "Telefonica.elk.2020+"
       }
     }
   logstash.conf: |
