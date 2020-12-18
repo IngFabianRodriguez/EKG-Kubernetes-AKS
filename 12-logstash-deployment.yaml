@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: sample-logstash
-  namespace: elk-test
+  namespace: elk
   labels:
     component: sample-logstash
 spec:
@@ -37,9 +37,9 @@ spec:
           requests:
             cpu: 100m
         ports:
-        - containerPort: 31301
+        - containerPort: 31300
           name: tcp
-        - containerPort: 31312
+        - containerPort: 31311
           name: http
       volumes:
         - name: sample-logstash-configmap

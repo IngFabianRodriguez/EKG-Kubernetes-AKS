@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: sample-elasticsearch-configmap
-  namespace: elk-test
+  namespace: elk
 data:
   elasticsearch.yml: |
     cluster.name: "sample-elasticsearch-cluster"

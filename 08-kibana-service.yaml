@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: sample-kibana
-  namespace: elk-test
+  namespace: elk
   labels:
     component: sample-kibana
 spec:

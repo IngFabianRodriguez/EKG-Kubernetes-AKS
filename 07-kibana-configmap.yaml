@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: sample-kibana-configmap
-  namespace: elk-test
+  namespace: elk
 data:
   kibana.yml: |
     server.name: sample-kibana
