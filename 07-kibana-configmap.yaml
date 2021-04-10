@@ -12,5 +12,3 @@ data:
     xpack.monitoring.ui.container.elasticsearch.enabled: true
     elasticsearch.username: kibana
     elasticsearch.password: Telefonica.elk.2020+
-
-   

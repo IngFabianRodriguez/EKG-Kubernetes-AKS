@@ -6,15 +6,10 @@ metadata:
   labels:
     component: sample-logstash
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   selector:
     component: sample-logstash
   ports:
-  - name: tcp
-    port: 5000
-    nodePort: 31300
-    targetPort: tcp
   - name: http
     port: 31311
-    nodePort: 31311
     targetPort: http

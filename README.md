@@ -1,14 +1,15 @@
 EKG-Kubernetes AKS
+
 Solucion para el despliegue de la solucion archivo por archivo numerado
 
 kubectl apply -f #file -n elk
 
-despues del paso 6 
+despues del paso 6
 
-ejecutamos 
-kubectl exec -ti sample-elasticsearch-0 bash 
+ejecutamos
+kubectl exec -ti sample-elasticsearch-0 bash
 
-Ingresamos y ejecutamos el siguiente comando 
+Ingresamos y ejecutamos el siguiente comando
 
 bin/elasticsearch-setup-passwords interactive
 

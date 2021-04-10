@@ -17,7 +17,7 @@ data:
         - filtertype: age
           source: name
           direction: older
-          timestring: '%Y.%m.%d'
+          timestring: '%Y-%m-%d'
           unit: days
           unit_count: 4
           field:
@@ -37,7 +37,7 @@ data:
       client_cert:
       client_key: 
       ssl_no_validate: False
-      http_auth: "elastic:Telefonica.elk.2020+"
+      http_auth: "elastic:Telefonica.2021.elk+"
       timeout: 30
       master_only: False
 

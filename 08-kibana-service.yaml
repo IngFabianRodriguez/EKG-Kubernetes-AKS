@@ -6,7 +6,7 @@ metadata:
   labels:
     component: sample-kibana
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   selector:
     component: sample-kibana
   ports:

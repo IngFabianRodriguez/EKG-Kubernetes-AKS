@@ -60,7 +60,7 @@ spec:
           - name: discovery.zen.ping.unicast.hosts
             value: "sample-elasticsearch-discovery:9300"
           - name: "discovery.type"
-            value: "single-node"  
+            value: "single-node"
         volumeMounts:
         - name: sample-elasticsearch-data-claim
           mountPath: /usr/share/elasticsearch/data

@@ -6,7 +6,7 @@ metadata:
   labels:
     component: sample-logstash
 spec:
-  replicas: 1
+  replicas: 5
   selector:
     matchLabels:
       component: sample-logstash
@@ -27,7 +27,7 @@ spec:
           subPath: logstash.conf
         - name: sample-logstash-configmap
           mountPath: /usr/share/logstash/logstash.cfg
-          subPath: logstash.cfg  
+          subPath: logstash.cfg
         - name: sample-logstash-configmap
           mountPath: /usr/share/logstash/config/pipelines.yml
           subPath: pipelines.yml
